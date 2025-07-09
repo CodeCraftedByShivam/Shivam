@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Shivam Yadav | Founder, Silent Defender</title>
+  <meta name="description"
+    content="Portfolio of Shivam Yadav, Founder of Silent Defender and Cybersecurity Enthusiast.">
+  <meta name="keywords" content="Shivam Yadav, Cybersecurity, Silent Defender, Portfolio, Robotics">
+  <meta name="author" content="Shivam Yadav">
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Navbar -->
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="nav-container"> <!-- NEW WRAPPER STARTS -->
+
+      <div class="nav-profile">
+        <img src="assets/LS20250625194207.png" alt="Shivam Yadav" />
+        <span>Shivam Yadav</span>
+      </div>
+
+      <div class="menu-toggle" id="menu-toggle">
+        <i class="fas fa-bars"></i>
+      </div>
+
+      <ul class="nav-links" id="nav-links">
+        <li><a href="about.html">About</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#achievement-gallery">Achievements</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+
+    </div> <!-- NEW WRAPPER ENDS -->
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero" id="hero">
+    <div class="hero-left">
+      <!-- <h1>Hi, I'm <span class="highlight">Shivam Yadav</span></h1> -->
+      <h2 class="intro-heading">
+        Hi, I'm <span class="highlight">Shivam Yadav</span>, a Third-Year B.Tech ECE Student.
+      </h2>
+
+      <p class="bio-paragraph">
+        Meet <span class="name">Shivam</span>, an engineering student passionate about cybersecurity, robotics, and
+        full-stack development.
+        He’s familiar with C, C++, Java, Python, and always eager to explore new technologies.
+      </p>
+
+      <p class="bio-tagline">
+        Currently building real-world projects and learning by doing. 🚀
+      </p>
+      <a href="shivam_yadav_cv.pdf" download class="btn-cv">Download CV</a>
+    </div>
+
+    <div class="hero-right">
+      <img src="assets/LS20250625194207.png" alt="Shivam Yadav" />
+      <div class="hero-icons">
+        <a href="https://www.linkedin.com/in/shivam-yadav-317294292/" target="_blank">
+          <i class="fa-brands fa-linkedin"></i>
+        </a>
+        <a href="https://github.com/CodeCraftedByShivam" target="_blank"><i class="fa-brands fa-github"></i></a>
+        <a href="https://www.instagram.com/shiv_am_.10?igsh=bWhpYzZjajZ6bzZn" target="_blank"><i
+            class="fa-brands fa-instagram"></i></a>
+        <a href="https://x.com/shivammm_10?t=AlVcnMAsMFEN1dudUH-dng&s=09" target="_blank"><i
+            class="fa-brands fa-twitter"></i></a>
+      </div>
+    </div>
+  </section>
+  <!-- About Section
+  <section id="about" class="section about-section" data-aos="fade-up">
+    <h2>About Me</h2>
+    <div class="about-content">
+      <div class="about-text" data-aos="fade-right" data-aos-delay="100">
+        <p>Hello! I’m <strong>Shivam Yadav</strong>, a passionate engineering student from India who lives and breathes
+          <span class="highlight">Cybersecurity</span>, <span class="highlight">Robotics</span>, and <span
+            class="highlight">Web Development</span>.
+        </p>
+        <p>I founded <strong>Silent Defender</strong> to help citizens fight cybercrime through awareness and reporting
+          tools. I also love building drones and robotic arms with ESP32 and Pixhawk, contributing to real-world
+          innovation.</p>
+        <p>When I'm not coding or building robots, I enjoy playing cricket, solving DSA problems, and sharing tech
+          knowledge with friends.</p>
+      </div>
+      <div class="about-img" data-aos="fade-left" data-aos-delay="200">
+        <img src="assets/poster.png" alt="Shivam Yadav" />
+      </div>
+    </div>
+  </section>
+ -->
+  <!-- Projects Section -->
+  <section id="projects" class="section projects-section" data-aos="fade-up">
+    <h2>Projects</h2>
+    <div class="project-grid">
+      <!-- ISRO Drone Project -->
+      <div class="project-card" data-aos="zoom-in-up" data-aos-delay="100">
+        <div class="project-img-wrapper">
+          <img src="assets/Projects/isro2.jpg" alt="ISRO Drone Project" />
+        </div>
+        <h3>Autonomous Drone – ISRO Robotics Challenge 2024</h3>
+        <p>Developed an autonomous drone for GPS-denied environments using Pixhawk & Raspberry Pi. Selected in
+          qualification round by ISRO.</p>
+
+        <div class="btn-group">
+          <button class="btn secondary" onclick="openGallery('isro')">View Photos</button>
+        </div>
+      </div>
+
+      <!-- Robotic Arm Project -->
+      <div class="project-card" data-aos="zoom-in-up" data-aos-delay="200">
+        <div class="project-img-wrapper">
+          <img src="assets/Projects/Robot6.jpg" alt="Robotic Arm Project" />
+        </div>
+        <h3>Robotic Arm – Web Controlled using ESP32</h3>
+        <p>Built a robotic arm with 4-DOF and recording-playback via a web interface. Secured 2nd Prize in college-level
+          robotics competition.</p>
+        <div class="btn-group">
+          <button class="btn secondary" onclick="openGallery('robotic')">View Photos</button>
+          <a href="assets/Projects/Robot2.jpg" target="_blank" class="btn">View Certificate</a>
+        </div>
+      </div>
+
+      <!-- Frontend Projects -->
+      <div class="project-card" data-aos="zoom-in-up" data-aos-delay="300">
+        <div class="project-img-wrapper">
+          <img src="assets/Projects/Front1.png" alt="Frontend Website" />
+        </div>
+        <h3>Multiple Frontend Projects</h3>
+        <p>Created and deployed frontend websites using HTML, CSS, JavaScript, React.js. Includes portfolios and product
+          pages.</p>
+        <div class="btn-group">
+          <button class="btn secondary" onclick="openGallery('frontend')">View Photos</button>
+        </div>
+      </div>
+
+      <!-- Digital Thermometer -->
+      <div class="project-card" data-aos="zoom-in-up" data-aos-delay="400">
+        <div class="project-img-wrapper">
+          <img src="assets/Projects/Digi2.jpg" alt="Digital Thermometer" />
+        </div>
+        <h3>Digital Thermometer – Mini Project</h3>
+        <p>Arduino-based mini project for real-time temperature monitoring with LCD display.</p>
+        <div class="btn-group">
+          <button class="btn secondary" onclick="openGallery('thermo')">View Photos</button>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- ISRO Gallery -->
+  <div id="gallery-isro" class="gallery-modal">
+    <span class="close" onclick="closeGallery('isro')">&times;</span>
+    <img class="gallery-image" id="isro-image" src="assets/Projects/isro2.jpg" />
+    <p class="image-caption" id="caption-isro">1 / 9</p>
+
+    <div class="gallery-controls">
+      <button onclick="changeImage('isro', -1)">⟨</button>
+      <button onclick="changeImage('isro', 1)">⟩</button>
+    </div>
+  </div>
+
+  <!-- Robotic Arm Gallery -->
+  <div id="gallery-robotic" class="gallery-modal">
+    <span class="close" onclick="closeGallery('robotic')">&times;</span>
+    <img class="gallery-image" id="robotic-image" src="assets/Projects/Robot6.jpg" />
+    <p class="image-caption" id="caption-robotic">1 / 4</p>
+
+    <div class="gallery-controls">
+      <button onclick="changeImage('robotic', -1)">⟨</button>
+      <button onclick="changeImage('robotic', 1)">⟩</button>
+    </div>
+  </div>
+
+  <!-- Frontend Gallery -->
+  <div id="gallery-frontend" class="gallery-modal">
+    <span class="close" onclick="closeGallery('frontend')">&times;</span>
+    <img class="gallery-image" id="frontend-image" src="assets/Projects/Front1.png" />
+    <p class="image-caption" id="caption-frontend">1 / 6</p>
+
+    <div class="gallery-controls">
+      <button onclick="changeImage('frontend', -1)">⟨</button>
+      <button onclick="changeImage('frontend', 1)">⟩</button>
+    </div>
+  </div>
+
+  <!-- Digital Thermometer Gallery -->
+  <div id="gallery-thermo" class="gallery-modal">
+    <span class="close" onclick="closeGallery('thermo')">&times;</span>
+    <img class="gallery-image" id="thermo-image" src="assets/Projects/Digi2.jpg" />
+    <p class="image-caption" id="caption-thermo">1 / 3</p>
+
+    <div class="gallery-controls">
+      <button onclick="changeImage('thermo', -1)">⟨</button>
+      <button onclick="changeImage('thermo', 1)">⟩</button>
+    </div>
+  </div>
+
+  <!-- Silent Defender -->
+  <!-- <div class="project-card" data-aos="zoom-in-up" data-aos-delay="300">
+    <div class="project-img-wrapper">
+      <img src="assets/poster.png" alt="Silent Defender" />
+       <div class="badge ongoing">🛠️ Work in Progress</div> -->
+  <!-- </div>
+    <h3>Silent Defender – Cybercrime Platform</h3>
+    <p>Cybersecurity platform to help users report and track cybercrimes. Includes admin panel, chatbot, and complaint tracking features.</p>
+  </div> -->
+
+  <!-- <img class="gallery-image" id="isro-image" src="assets/isro-drone-1.jpg" /> -->
+  
+  <!-- Startup Section -->
+  <!-- <section id="startup" class="section">
+    <div class="startup-top">
+      <div class="startup-content">
+        <div class="startup-text" data-aos="fade-right">
+          <h2>Silent Defender</h2>
+          <p>
+            <strong>Silent Defender</strong> is a cybersecurity platform I founded to empower citizens
+            against <span class="highlight">cybercrime</span> through smart reporting, awareness, and real-time
+            tracking.
+          </p>
+          <p>
+            Our goal is to create a <span class="highlight">safe digital space</span> by integrating
+            chatbot navigation, complaint status tracking, and admin control into a single platform.
+          </p> -->
+
+          <!-- Social Links
+          <div class="company-socials">
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-linkedin"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+          </div>
+        </div>
+
+        <div class="startup-image" data-aos="fade-left">
+          <img src="assets/poster.png" alt="Silent Defender Poster" />
+        </div>
+      </div>
+    </div> -->
+
+    <!-- Features Section -->
+    <!-- <section class="section features-section" id="features">
+      <h2 class="section-title clean-title">What Silent Defender Offers</h2>
+      <div class="feature-grid" data-aos="fade-up" data-aos-delay="200">
+        <div class="feature-box">
+          <i class="fas fa-shield-alt"></i>
+          <h4>Cybercrime Reporting</h4>
+          <p>Easy-to-use complaint registration with unique ID and notification system.</p>
+        </div>
+        <div class="feature-box">
+          <i class="fas fa-robot"></i>
+          <h4>AI Chatbot Guide</h4>
+          <p>Instant guidance to help users navigate and register complaints easily.</p>
+        </div>
+        <div class="feature-box">
+          <i class="fas fa-user-shield"></i>
+          <h4>Admin Panel</h4>
+          <p>Admins can manage cases, update status, and monitor analytics securely.</p>
+        </div>
+        <div class="feature-box">
+          <i class="fas fa-video"></i>
+          <h4>Awareness Videos</h4>
+          <p>Interactive videos educating users about scams and protection methods.</p>
+        </div>
+      </div>
+    </section> -->
+
+    <!-- Tech Stack Section -->
+    <!-- <section id="tech-stack" class="section tech-section">
+      <h2 class="section-title clean-title">Technologies We Use</h2>
+      <div class="tech-grid">
+        <div class="tech-box">
+          <i class="fab fa-html5" style="color: #e44d26;"></i>
+          <h4>HTML5</h4>
+        </div>
+        <div class="tech-box">
+          <i class="fab fa-css3-alt" style="color: #264de4;"></i>
+          <h4>CSS3</h4>
+        </div>
+        <div class="tech-box">
+          <i class="fab fa-js" style="color: #f0db4f;"></i>
+          <h4>JavaScript</h4>
+        </div>
+        <div class="tech-box">
+          <i class="fas fa-database" style="color: #4db33d;"></i>
+          <h4>MongoDB</h4>
+        </div>
+        <div class="tech-box">
+          <i class="fab fa-whatsapp" style="color: #25D366;"></i>
+          <h4>WhatsApp API</h4>
+        </div>
+      </div>
+    </section> -->
+
+    <!-- Startup Note -->
+    <!-- <div class="startup-note" data-aos="fade-up" data-aos-delay="300">
+      <p>
+        🚀 We're not stopping here — new features like
+        <strong class="highlight">OTP verification</strong>,
+        <strong class="highlight">user dashboards</strong>, and
+        <strong class="highlight">advanced analytics tools</strong>
+        are on the way.
+      </p>
+      <p>
+        💡 Silent Defender is a growing mission — and this is just the beginning.
+      </p>
+    </div>
+  </section> -->
+<!-- Achievements Section -->
+<section id="achievement-gallery" class="section">
+  <h2>Achievement Gallery</h2>
+
+  <div class="achievement-box" id="ach0">
+    <img src="assets/Projects/ach1.2.jpg" alt="Gold Medal">
+    <div class="achievement-text">
+      <h3>🥇 Gold Medal – Academic Excellence</h3>
+      <p>Won Gold Medal for securing top rank in first year academics.</p>
+    </div>
+  </div>
+
+  <div class="achievement-box" id="ach1">
+    <img src="assets/Projects/Scientist_felicition.JPG" alt="ISRO Felicitation">
+    <div class="achievement-text">
+      <h3>🛰️ Felicitated by ISRO Scientists</h3>
+      <p>Honoured for presenting GPS-independent drone innovation.</p>
+    </div>
+  </div>
+
+  <div class="achievement-box" id="ach2">
+    <img src="assets/Projects/isro6.jpg" alt="ISRO Drone">
+    <div class="achievement-text">
+      <h3>🚁 ISRO Robotics Challenge 2024</h3>
+      <p>Qualified with autonomous drone without GPS navigation.</p>
+    </div>
+  </div>
+
+  <div class="achievement-box" id="ach3">
+    <img src="assets/Projects/Robot5.jpg" alt="Mini Project">
+    <div class="achievement-text">
+      <h3>🤖 2nd Rank – Robotic Arm Project</h3>
+      <p>Secured 2nd position in college mini project using ESP32 & Web Interface.</p>
+    </div>
+  </div>
+  
+  <div class="achievement-box" id="ach4">
+    <img src="assets/Projects/cer2.png" alt="Certifications">
+    <div class="achievement-text">
+      <h3>🎓 Certifications</h3>
+      <p>Certified in Web Development, Cybersecurity, AutoCAD – Cisco, Infosys, Spoken Tutorial.</p>
+    </div>
+  </div>
+</div>
+</section>
+
+  <!-- Skills Section -->
+  <section id="skills" class="section">
+    <h2 class="section-title">My Skillset</h2>
+    <div class="skill-container">
+
+      <div class="skill-item">
+        <div class="skill-header">
+          <span><i class="fa-brands fa-html5"></i> HTML / CSS</span>
+          <span class="level">Expert</span>
+        </div>
+        <div class="progress-bar">
+          <div class="progress-fill" data-width="95%"></div>
+        </div>
+      </div>
+
+      <div class="skill-item">
+        <div class="skill-header">
+          <span><i class="fa-brands fa-js"></i> JavaScript</span>
+          <span class="level">Intermediate</span>
+        </div>
+        <div class="progress-bar">
+          <div class="progress-fill" data-width="65%"></div>
+        </div>
+      </div>
+
+      <div class="skill-item">
+        <div class="skill-header">
+          <span><i class="fa-brands fa-react"></i> React.js</span>
+          <span class="level">Intermediate</span>
+        </div>
+        <div class="progress-bar">
+          <div class="progress-fill" data-width="80%"></div>
+        </div>
+      </div>
+
+      <div class="skill-item">
+        <div class="skill-header">
+          <span><i class="fa-solid fa-database"></i> MongoDB</span>
+          <span class="level">Intermediate</span>
+        </div>
+        <div class="progress-bar">
+          <div class="progress-fill" data-width="75%"></div>
+        </div>
+      </div>
+
+      <div class="skill-item">
+        <div class="skill-header">
+          <span><i class="fa-brands fa-python"></i> Python</span>
+          <span class="level">Beginner</span>
+        </div>
+        <div class="progress-bar">
+          <div class="progress-fill" data-width="70%"></div>
+        </div>
+      </div>
+
+      <div class="skill-item">
+        <div class="skill-header">
+          <span><i class="fa-solid fa-shield-halved"></i> Cybersecurity</span>
+          <span class="level">Beginner</span>
+        </div>
+        <div class="progress-bar">
+          <div class="progress-fill" data-width="60%"></div>
+        </div>
+
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+<section id="contact" class="section contact-section">
+  <h2 class="section-title">Let's Connect</h2>
+
+  <div class="contact-wrapper">
+    <!-- Left: Info & CV Button -->
+    <div class="contact-info">
+      <p><i class="fas fa-envelope"></i> 
+        <a href="shivam.yadav18361@sakec.ac.in">shivam.yadav18361@sakec.ac.in</a>
+      </p>
+      <p><i class="fab fa-github"></i> 
+        <a href="https://github.com/CodeCraftedByShivam" target="_blank">CodeCraftedByShivam</a>
+      </p>
+      <p><i class="fab fa-linkedin"></i> 
+        <a href="https://www.linkedin.com/in/shivam-yadav-317294292/" target="_blank">SHIVAM YADAV</a>
+      </p>
+
+      <a href="assets/Projects/Gray and White Simple Clean Resume.pdf" download class="btn-download">
+        <i class="fas fa-download"></i> Download CV
+      </a>
+    </div>
+
+    <!-- Right: Contact Form with FormSubmit -->
+    <form class="contact-form" action="https://formsubmit.co/hfake9829@gmail.com" method="POST">
+      <input type="text" name="name" placeholder="Your Name" required />
+      <input type="email" name="email" placeholder="Your Email" required />
+      <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+
+      <!-- Hidden config -->
+      <input type="hidden" name="_subject" value="🚀 New Contact from Portfolio">
+      <input type="hidden" name="_template" value="table">
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="_next" value="https://yourdomain.com/thank-you.html">
+
+      <button type="submit">Send Message</button>
+    </form>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="footer-content">
+    <h3 class="footer-name">Shivam Yadav</h3>
+    <p class="footer-tagline">Developer by Passion, Defender by Purpose.</p>
+
+      <div class="hero-icons">
+        <a href="https://www.linkedin.com/in/shivam-yadav-317294292/" target="_blank">
+          <i class="fa-brands fa-linkedin"></i>
+        </a>
+        <a href="https://github.com/CodeCraftedByShivam" target="_blank"><i class="fa-brands fa-github"></i></a>
+        <a href="https://www.instagram.com/shiv_am_.10?igsh=bWhpYzZjajZ6bzZn" target="_blank"><i
+            class="fa-brands fa-instagram"></i></a>
+        <a href="https://x.com/shivammm_10?t=AlVcnMAsMFEN1dudUH-dng&s=09" target="_blank"><i
+            class="fa-brands fa-twitter"></i></a>
+      </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>&copy; 2025 <span class="footer-highlight">Shivam Yadav</span>. All rights reserved.</p>
+  </div>
+</footer>
+
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/tsparticles@3/tsparticles.bundle.min.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>AOS.init();</script>
+  <!-- GSAP Core -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+
+  <!-- GSAP ScrollTrigger Plugin -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  
+  <script>
+    gsap.registerPlugin(ScrollTrigger);
+
+    document.querySelectorAll('.progress-fill').forEach((bar) => {
+      const targetWidth = bar.getAttribute('data-width');
+      
+      gsap.set(bar, { width: "0%" });
+
+      gsap.to(bar, {
+        scrollTrigger: {
+          trigger: bar,
+          start: "top 90%",
+          toggleActions: "play none none none"
+        },
+        width: targetWidth,
+        duration: 1.5,
+        ease: "power4.out"
+      });
+    });
+  </script>
+
+<script src="script.js"></script>
+</body>
+
+</html>

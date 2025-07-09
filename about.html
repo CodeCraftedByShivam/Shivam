@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Me - Shivam Yadav</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: #0f0f11;
+            color: #e2e8f0;
+            line-height: 1.8;
+            /* padding: 60px 20px; */
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding-top: 40px;
+        }
+
+        .back-home {
+            display: inline-block;
+            margin-bottom: 40px;
+            text-decoration: none;
+            color: #94a3b8;
+            font-weight: 500;
+            font-size: 16px;
+            transition: color 0.3s ease;
+        }
+
+        .back-home:hover {
+            color: #cbd5e1;
+        }
+
+        .hero-icons {
+            text-align: center;
+            margin-bottom: 30px;
+            margin-top: -10px;
+        }
+
+        .hero-icons a {
+            display: inline-block;
+            color: #646668;
+            font-size: 17px;
+            margin: 0 10px;
+            margin-top: 3px;
+            transition: color 0.3s ease;
+        }
+
+        .hero-icons a:hover {
+            color: #ffffff;
+        }
+
+
+        .about-image {
+            width: 280px;
+            height: 360px;
+            object-fit: cover;
+            object-position: top;
+            border-radius: 18px;
+            transition: all 0.3s ease-in-out;
+            display: block;
+            margin: 0 auto 30px;
+            box-shadow: 0 10px 30px rgba(255, 255, 255, 0.08);
+        }
+
+        .about-image:hover {
+            transform: scale(1.03);
+            box-shadow: 0 15px 40px rgba(255, 255, 255, 0.15);
+        }
+
+        .about-text {
+            font-size: 18px;
+            color: #cbd5e1;
+            text-align: justify;
+        }
+
+        .about-text h1 {
+            font-size: 32px;
+            margin-bottom: 20px;
+            color: #ffffff;
+        }
+
+        @media (max-width: 600px) {
+            .about-text {
+                font-size: 16px;
+            }
+
+            .about-text h1 {
+                font-size: 26px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .about-image {
+                width: 220px;
+                height: 300px;
+            }
+
+            .about-text {
+                font-size: 16px;
+            }
+
+            .about-text h1 {
+                font-size: 26px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 30px 15px;
+                padding-left: 20px;
+                padding-right: 20px;
+            }
+
+            .about-image {
+                width: 180px;
+                height: 260px;
+            }
+
+            .about-text {
+                font-size: 15px;
+                margin: 30px;
+            }
+
+            .about-text h1 {
+                font-size: 22px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <a href="index.html" class="back-home"><i class="fas fa-arrow-left"></i> Back to Home</a>
+
+        <img src="assets/LS20250625194207.png" alt="Shivam Yadav" class="about-image">
+
+        <div class="hero-icons">
+            <a href="https://www.linkedin.com/in/shivam-yadav-317294292/" target="_blank">
+                <i class="fa-brands fa-linkedin"></i>
+            </a>
+            <a href="https://github.com/CodeCraftedByShivam" target="_blank">
+                <i class="fa-brands fa-github"></i>
+            </a>
+            <a href="https://www.instagram.com/shiv_am_.10?igsh=bWhpYzZjajZ6bzZn" target="_blank">
+                <i class="fa-brands fa-instagram"></i>
+            </a>
+            <a href="https://x.com/shivammm_10?t=AlVcnMAsMFEN1dudUH-dng&s=09" target="_blank">
+                <i class="fa-brands fa-twitter"></i>
+            </a>
+        </div>
+
+
+
+
+        <div class="about-text">
+            <h1>About Me</h1>
+            <p>
+                I'm <strong>Shivam Yadav</strong>, currently pursuing my B.Tech in Electronics and Communication
+                Engineering. I am someone who thrives at the intersection of creativity and logic — always exploring how
+                things work, and more importantly, how they can be improved.
+            </p>
+
+            <p>
+                Whether it's hardware like robotics or software development, I find joy in building things from scratch.
+                I have a deep curiosity in the world of technology, from front-end interfaces to complex backend logic,
+                and I enjoy the process of solving problems with clean and efficient solutions.
+            </p>
+
+            <p>
+                Apart from engineering, I am also actively involved in a startup project — not just as a technical
+                contributor but as someone who brings vision, energy, and a strong sense of ownership to every task. I
+                believe that passion, persistence, and purpose are the real drivers of innovation.
+            </p>
+
+            <p>
+                Every line of code I write and every circuit I build reflects a fire in me — the fire to learn, build,
+                and contribute to something meaningful.
+            </p>
+        </div>
+    </div>
+</body>
+
+</html>
