@@ -136,6 +136,7 @@ body::-webkit-scrollbar {
     left: 0;
     width: 100%;
     background: rgba(30, 30, 30, 0.97);
+    backdrop-filter: blur(10px);
     flex-direction: column;
     align-items: center;
     gap: 16px;
@@ -146,29 +147,35 @@ body::-webkit-scrollbar {
     z-index: 9999;
     border-radius: 0 0 16px 16px;
     transition: all 0.4s ease;
+    display: flex; /* ✅ Always flex, but hidden with max-height */
   }
 
   .nav-links.active {
-    display: flex; /* ✅ Important line */
     max-height: 300px;
     padding: 18px 0;
     opacity: 1;
-    overflow: visible; /* ✅ Show child li */
+    overflow: visible;
   }
 
   .nav-links li {
     opacity: 0;
     transform: translateY(-10px);
-    transition: all 0.3s ease;
+    transition: all 0.3s ease 0.1s; /* ✅ Added delay */
   }
 
   .nav-links.active li {
     opacity: 1;
     transform: translateY(0);
   }
-}
 
-/* Slide animation */
+  .nav-links li a {
+    color: white !important; /* ✅ Force white text */
+    font-size: 16px;
+    padding: 8px 16px;
+    display: block;
+    text-align: center;
+  }
+}/* Slide animation */
 @keyframes slideDown {
   from {
     opacity: 0;
