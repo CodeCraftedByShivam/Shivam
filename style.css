@@ -175,7 +175,8 @@ body::-webkit-scrollbar {
     display: block;
     text-align: center;
   }
-}/* Slide animation */
+}
+/* Slide animation */
 @keyframes slideDown {
   from {
     opacity: 0;
