@@ -23,8 +23,8 @@ const images = {
   robotic: [
     "assets/Projects/robot1.jpg",
     "assets/Projects/Robot2.jpg",
-    "assets/Projects/robot4.jpg",
-    "assets/Projects/robot5.jpg"
+    "assets/Projects/Robot4.jpg",
+    "assets/Projects/Robot5.jpg"
   ],
   frontend: [
     "assets/Projects/Front1.png",
