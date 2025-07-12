@@ -1485,7 +1485,7 @@ body::-webkit-scrollbar {
 }
 
 /* Responsive (Basic) */
-@media (max-width: 768px) {
+/* @media (max-width: 768px) {
   .hero {
     flex-direction: column;
     text-align: center;
@@ -1507,7 +1507,7 @@ body::-webkit-scrollbar {
   .skill-grid {
     grid-template-columns: 1fr;
   }
-}
+} */
 
 
 /* //Fotter */
