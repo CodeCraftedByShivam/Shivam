@@ -1,10 +1,17 @@
-  const menuToggle = document.getElementById('menu-toggle');
-  const navLinks = document.getElementById('nav-links');
+const menuToggle = document.getElementById('menu-toggle');
+const navLinks = document.getElementById('nav-links');
+const navItems = document.querySelectorAll('.nav-links li a');
 
-  menuToggle.addEventListener('click', () => {
-    navLinks.classList.toggle('active');
+menuToggle.addEventListener('click', () => {
+  navLinks.classList.toggle('active');
+});
+
+// Jab kisi nav link pe click ho toh menu hide ho jaye
+navItems.forEach(link => {
+  link.addEventListener('click', () => {
+    navLinks.classList.remove('active');
   });
-
+});
 
 
 // ✅ Project Image Gallery
