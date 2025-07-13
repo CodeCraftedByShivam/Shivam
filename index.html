@@ -31,6 +31,19 @@
   gtag('config', 'G-J7EGSH3FVN');
 </script>
 
+  <!-- Hotjar Tracking Code -->
+
+ <script>
+    (function(h,o,t,j,a,r){
+        h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+        h._hjSettings={hjid: YOUR_HOTJAR_ID, hjsv:6};
+        a=o.getElementsByTagName('head')[0];
+        r=o.createElement('script');r.async=1;
+        r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+        a.appendChild(r);
+    })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+  </script>
+
 </head>
 
 <body>
@@ -77,7 +90,12 @@
       <p class="bio-tagline">
         Currently building real-world projects and learning by doing. 🚀
       </p>
-      <a href="assets/Projects/shivam_CV.pdf" download class="btn-cv">Download CV</a>
+<a href="assets/Projects/shivam_CV.pdf" 
+   download 
+   class="btn-cv"
+   onclick="gtag('event', 'resume_download', { event_category: 'engagement', event_label: 'hero_cv' })">
+   Download CV
+</a>
     </div>
 
     <div class="hero-right">
@@ -445,43 +463,43 @@
   </section>
 
   <!-- Contact Section -->
-  <section id="contact" class="section contact-section">
-    <h2 class="section-title">Let's Connect</h2>
+<section id="contact" class="section contact-section">
+  <h2 class="section-title">Let's Connect</h2>
 
-    <div class="contact-wrapper">
-      <!-- Left: Info & CV Button -->
-      <div class="contact-info">
-        <p><i class="fas fa-envelope"></i>
-          <a href="shivam.yadav18361@sakec.ac.in">shivam.yadav18361@sakec.ac.in</a>
-        </p>
-        <p><i class="fab fa-github"></i>
-          <a href="https://github.com/CodeCraftedByShivam" target="_blank">CodeCraftedByShivam</a>
-        </p>
-        <p><i class="fab fa-linkedin"></i>
-          <a href="https://www.linkedin.com/in/shivam-yadav-317294292/" target="_blank">SHIVAM YADAV</a>
-        </p>
+  <div class="contact-wrapper">
+    <!-- Left: Info & Hire Me Button -->
+    <div class="contact-info">
+      <p><i class="fas fa-envelope"></i>
+        <a href="mailto:shivam.yadav18361@sakec.ac.in">shivam.yadav18361@sakec.ac.in</a>
+      </p>
+      <p><i class="fab fa-github"></i>
+        <a href="https://github.com/CodeCraftedByShivam" target="_blank">CodeCraftedByShivam</a>
+      </p>
+      <p><i class="fab fa-linkedin"></i>
+        <a href="https://www.linkedin.com/in/shivam-yadav-317294292/" target="_blank">SHIVAM YADAV</a>
+      </p>
 
-        <a href="assets/Projects/shivam_CV.pdf" download class="btn-download">
-          <i class="fas fa-download"></i> Download CV
-        </a>
-      </div>
+      <!-- Hire Me Button with Tracking -->
+<a id="hireMeBtn" class="btn-download">
+  <i class="fas fa-briefcase"></i> Hire Me
+</a>    </div>
 
-      <!-- Right: Contact Form with FormSubmit -->
-      <form class="contact-form" action="https://formsubmit.co/hfake9829@gmail.com" method="POST">
-        <input type="text" name="name" placeholder="Your Name" required />
-        <input type="email" name="email" placeholder="Your Email" required />
-        <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+    <!-- Right: Contact Form with FormSubmit -->
+    <form class="contact-form" action="https://formsubmit.co/hfake9829@gmail.com" method="POST">
+      <input type="text" name="name" placeholder="Your Name" required />
+      <input type="email" name="email" placeholder="Your Email" required />
+      <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
 
-        <!-- Hidden config -->
-        <input type="hidden" name="_subject" value="🚀 New Contact from Portfolio">
-        <input type="hidden" name="_template" value="table">
-        <input type="hidden" name="_captcha" value="false">
-        <input type="hidden" name="_next" value="https://shivamyadav-three.vercel.app/thankyou.html">
+      <!-- Hidden config -->
+      <input type="hidden" name="_subject" value="🚀 New Contact from Portfolio">
+      <input type="hidden" name="_template" value="table">
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="_next" value="https://shivamyadav-three.vercel.app/thankyou.html">
 
-        <button type="submit">Send Message</button>
-      </form>
-    </div>
-  </section>
+      <button type="submit">Send Message</button>
+    </form>
+  </div>
+</section>
 
   <footer class="site-footer">
     <div class="footer-content">
@@ -536,6 +554,51 @@
       });
     });
   </script>
+  <!-- Section Scroll tracking  -->
+<script>
+  const sections = document.querySelectorAll("section");
+  const options = { threshold: 0.5 };
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        gtag('event', 'section_view', {
+          event_category: 'scroll',
+          event_label: entry.target.id
+        });
+      }
+    });
+  }, options);
+
+  sections.forEach(section => {
+    if (section.id) observer.observe(section);
+  });
+</script>
+
+
+<!-- HIRE ME SECTION  -->
+ <script>
+  const hireBtn = document.getElementById("hireMeBtn");
+
+  const email = "shivam.yadav18361@sakec.ac.in";
+  const subject = "Hiring Inquiry";
+  const body = "Hi Shivam,%0AI saw your portfolio and would like to connect...";
+
+  const gmailURL = `https://mail.google.com/mail/?view=cm&fs=1&to=${email}&su=${subject}&body=${body}`;
+  const mailtoURL = `mailto:${email}?subject=${subject}&body=${body}`;
+
+  const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+
+  hireBtn.href = isMobile ? mailtoURL : gmailURL;
+  hireBtn.target = "_blank";
+
+  hireBtn.addEventListener("click", () => {
+    gtag('event', 'email_click', {
+      event_category: 'leads',
+      event_label: isMobile ? 'mailto_auto' : 'gmail_auto'
+    });
+  });
+</script>
 
   <script src="script.js"></script>
 </body>
