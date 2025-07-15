@@ -485,48 +485,35 @@
 </a>    </div>
 
     <!-- Right: Contact Form with FormSubmit -->
-<form id="contactForm" class="contact-form">
-  <input type="text" name="name" placeholder="Your Name" required />
-  <input type="email" name="email" placeholder="Your Email" required />
-  <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
-
-  <button type="submit">Send Message</button>
+<form id="contactForm">
+  <input type="text" name="name" required placeholder="Your Name" />
+  <input type="email" name="email" required placeholder="Your Email" />
+  <textarea name="message" required placeholder="Your Message"></textarea>
+  <button type="submit">Send</button>
 </form>
 
 <script>
-  const scriptURL = 'https://script.google.com/macros/s/AKfycbxPqw4yq1hktH6wuQcgMPzZWnUhFeYrk5M3gttcpoKMsO_3fBT2LV0xhfYnlTQ-Don1/exec'; // <-- paste your deployment URL here
+  const scriptURL = "https://script.google.com/macros/s/AKfycbxPqw4yq1hktH6wuQcgMPzZWnUhFeYrk5M3gttcpoKMsO_3fBT2LV0xhfYnlTQ-Don1/exec";
 
-  document.getElementById('contactForm').addEventListener('submit', async (e) => {
+  document.getElementById("contactForm").addEventListener("submit", async (e) => {
     e.preventDefault();
 
-    const form = e.target;
-    const formData = {
-      name: form.name.value,
-      email: form.email.value,
-      message: form.message.value
-    };
+    const form = new FormData(e.target);
 
     try {
       const res = await fetch(scriptURL, {
-        method: 'POST',
-        body: JSON.stringify(formData),
-        headers: {
-          'Content-Type': 'application/json'
-        }
+        method: "POST",
+        body: form,
       });
 
-      const result = await res.json();
-      if (result.status === "success") {
-        alert("Message sent successfully!");
-        window.location.href = "https://shivamyadav-three.vercel.app/thankyou.html";
-      } else {
-        alert("Failed to submit. Try again!");
-      }
+      const text = await res.text();
+      alert("Message sent!");
+      window.location.href = "https://shivamyadav-three.vercel.app/thankyou.html";
     } catch (err) {
       alert("Error submitting form: " + err.message);
     }
 
-    form.reset();
+    e.target.reset();
   });
 </script>
   </div>
