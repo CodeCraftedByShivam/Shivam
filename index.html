@@ -499,20 +499,25 @@
     e.preventDefault();
 
     const form = new FormData(e.target);
+    const submitBtn = document.querySelector("button");
+    submitBtn.disabled = true;
+    submitBtn.innerText = "Sending...";
 
     try {
       await fetch(scriptURL, {
         method: "POST",
         body: form,
-        mode: "no-cors" // ✅ IMPORTANT
+        mode: "no-cors"
       });
 
-      alert("Message sent!");
+      // Instead of alert, instantly redirect
       window.location.href = "https://shivamyadav-three.vercel.app/thankyou.html";
     } catch (err) {
       alert("Error: " + err.message);
     }
 
+    submitBtn.disabled = false;
+    submitBtn.innerText = "Send Message";
     e.target.reset();
   });
 </script>
