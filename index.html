@@ -501,12 +501,12 @@
     const form = new FormData(e.target);
 
     try {
-      const res = await fetch(scriptURL, {
+      await fetch(scriptURL, {
         method: "POST",
-        body: form
+        body: form,
+        mode: "no-cors" // ✅ IMPORTANT
       });
 
-      const text = await res.text();
       alert("Message sent!");
       window.location.href = "https://shivamyadav-three.vercel.app/thankyou.html";
     } catch (err) {
