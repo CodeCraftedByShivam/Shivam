@@ -495,11 +495,12 @@
 <script>
   const scriptURL = "https://script.google.com/macros/s/AKfycbxPqw4yq1hktH6wuQcgMPzZWnUhFeYrk5M3gttcpoKMsO_3fBT2LV0xhfYnlTQ-Don1/exec";
 
-  document.getElementById("contact-form").addEventListener("submit", async (e) => {
+  document.getElementById("contact-form").addEventListener("submit", async function (e) {
     e.preventDefault();
 
-    const form = new FormData(e.target);
-    const submitBtn = document.querySelector("button");
+    const form = new FormData(this);
+    const submitBtn = this.querySelector("button");
+
     submitBtn.disabled = true;
     submitBtn.innerText = "Sending...";
 
@@ -510,15 +511,17 @@
         mode: "no-cors"
       });
 
-      // Instead of alert, instantly redirect
-      window.location.href = "https://shivamyadav-three.vercel.app/thankyou.html";
+      // Wait 1 second and redirect (since response can't be read in no-cors)
+      setTimeout(() => {
+        window.location.href = "https://shivamyadav-three.vercel.app/thankyou.html";
+      }, 1000);
     } catch (err) {
       alert("Error: " + err.message);
+      submitBtn.disabled = false;
+      submitBtn.innerText = "Send Message";
     }
 
-    submitBtn.disabled = false;
-    submitBtn.innerText = "Send Message";
-    e.target.reset();
+    this.reset();
   });
 </script>
   </div>
