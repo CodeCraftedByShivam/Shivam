@@ -485,19 +485,50 @@
 </a>    </div>
 
     <!-- Right: Contact Form with FormSubmit -->
-    <form class="contact-form" action="https://formsubmit.co/hfake9829@gmail.com" method="POST">
-      <input type="text" name="name" placeholder="Your Name" required />
-      <input type="email" name="email" placeholder="Your Email" required />
-      <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+<form id="contactForm" class="contact-form">
+  <input type="text" name="name" placeholder="Your Name" required />
+  <input type="email" name="email" placeholder="Your Email" required />
+  <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
 
-      <!-- Hidden config -->
-      <input type="hidden" name="_subject" value="🚀 New Contact from Portfolio">
-      <input type="hidden" name="_template" value="table">
-      <input type="hidden" name="_captcha" value="false">
-      <input type="hidden" name="_next" value="https://shivamyadav-three.vercel.app/thankyou.html">
+  <button type="submit">Send Message</button>
+</form>
 
-      <button type="submit">Send Message</button>
-    </form>
+<script>
+  const scriptURL = 'https://script.google.com/macros/s/AKfycbxPqw4yq1hktH6wuQcgMPzZWnUhFeYrk5M3gttcpoKMsO_3fBT2LV0xhfYnlTQ-Don1/exec'; // <-- paste your deployment URL here
+
+  document.getElementById('contactForm').addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    const form = e.target;
+    const formData = {
+      name: form.name.value,
+      email: form.email.value,
+      message: form.message.value
+    };
+
+    try {
+      const res = await fetch(scriptURL, {
+        method: 'POST',
+        body: JSON.stringify(formData),
+        headers: {
+          'Content-Type': 'application/json'
+        }
+      });
+
+      const result = await res.json();
+      if (result.status === "success") {
+        alert("Message sent successfully!");
+        window.location.href = "https://shivamyadav-three.vercel.app/thankyou.html";
+      } else {
+        alert("Failed to submit. Try again!");
+      }
+    } catch (err) {
+      alert("Error submitting form: " + err.message);
+    }
+
+    form.reset();
+  });
+</script>
   </div>
 </section>
 
