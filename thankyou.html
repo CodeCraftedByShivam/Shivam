@@ -1,208 +1,240 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Thank You - Message Sent!</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Thank You - Message Sent!</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-        body {
-            font-family: 'Arial', sans-serif;
-            background: black;
-            min-height: 100vh;
-            display: flex;;
-            align-items: center;
-            justify-content: center;
-            padding: 20px;
-        }
+    body {
+      background: #0a0a0a;
+      color: #fff;
+      font-family: "Segoe UI", sans-serif;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      position: relative;
+      overflow: hidden;
+    }
 
-        .thank-you-container {
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            border-radius: 20px;
-            padding: 50px 40px;
-            text-align: center;
-            max-width: 500px;
-            width: 100%;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-            animation: fadeInUp 0.8s ease-out;
-        }
+    .thank-you-container {
+      background: rgba(255, 255, 255, 0.95);
+      color: #333;
+      border-radius: 25px;
+      padding: 50px 40px;
+      text-align: center;
+      max-width: 500px;
+      width: 90%;
+      box-shadow: 0 0 30px rgba(255, 255, 255, 0.2);
+      border: 3px solid;
+      border-image: linear-gradient(45deg, #667eea, #764ba2) 1;
+      animation: fadeInUp 1s ease, glow 3s ease-in-out infinite alternate;
+      position: relative;
+      z-index: 2;
+    }
 
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
+    @keyframes glow {
+      0% { box-shadow: 0 0 10px #764ba2; }
+      100% { box-shadow: 0 0 30px #667eea; }
+    }
 
-        .success-icon {
-            width: 80px;
-            height: 80px;
-            margin: 0 auto 30px;
-            background: linear-gradient(135deg, #4CAF50, #45a049);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            animation: pulse 2s infinite;
-        }
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
 
-        @keyframes pulse {
-            0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.05); }
-        }
+    .success-icon {
+      margin-bottom: 30px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      animation: bounce 1.5s infinite;
+    }
 
-        .checkmark {
-            width: 30px;
-            height: 30px;
-            border: 3px solid white;
-            border-top: none;
-            border-right: none;
-            transform: rotate(-45deg);
-            margin-top: -5px;
-        }
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-8px); }
+    }
 
-        h1 {
-            color: #333;
-            font-size: 2.5em;
-            margin-bottom: 20px;
-            font-weight: 700;
-        }
+    .success-icon svg {
+      width: 80px;
+      height: 80px;
+      fill: #4CAF50;
+    }
 
-        p {
-            color: #666;
-            font-size: 1.2em;
-            line-height: 1.6;
-            margin-bottom: 30px;
-        }
+    h1 {
+      font-size: 2.4em;
+      margin-bottom: 15px;
+    }
 
-        .back-button {
-            background: linear-gradient(135deg, #667eea, #764ba2);
-            color: white;
-            border: none;
-            padding: 15px 40px;
-            border-radius: 50px;
-            font-size: 1.1em;
-            font-weight: 600;
-            cursor: pointer;
-            text-decoration: none;
-            display: inline-block;
-            transition: all 0.3s ease;
-            box-shadow: 0 10px 20px rgba(102, 126, 234, 0.3);
-        }
+    p {
+      font-size: 1.1em;
+      margin-bottom: 30px;
+      color: #444;
+    }
 
-        .back-button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 15px 30px rgba(102, 126, 234, 0.4);
-        }
+    .back-button {
+      background: linear-gradient(135deg, #667eea, #764ba2);
+      color: white;
+      padding: 14px 32px;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      display: inline-block;
+      margin-bottom: 20px;
+    }
 
-        .social-links {
-            margin-top: 40px;
-            padding-top: 30px;
-            border-top: 1px solid #eee;
-        }
+    .back-button:hover {
+      transform: scale(1.05);
+      box-shadow: 0 8px 20px rgba(118, 75, 162, 0.4);
+    }
 
-        .social-links p {
-            font-size: 1em;
-            margin-bottom: 15px;
-            color: #888;
-        }
+    .social-icons {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      margin-top: 20px;
+    }
 
-        .social-icons {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-        }
+    .social-icon {
+      background: #333;
+      color: #fff;
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      transition: 0.3s ease;
+      font-size: 1em;
+    }
 
-        .social-icon {
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-decoration: none;
-            color: white;
-            font-weight: bold;
-            transition: all 0.3s ease;
-        }
+    .social-icon:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 20px rgba(255, 255, 255, 0.2);
+    }
 
-        .linkedin { background: #0077b5; }
-        .github { background: #333; }
-        .twitter { background: #1da1f2; }
-
-        .social-icon:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-        }
-
-        @media (max-width: 768px) {
-            .thank-you-container {
-                padding: 40px 30px;
-            }
-            
-            h1 {
-                font-size: 2em;
-            }
-            
-            p {
-                font-size: 1.1em;
-            }
-        }
-    </style>
+    /* Particle background */
+    .particles {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 0;
+    }
+  </style>
 </head>
 <body>
-    <div class="thank-you-container">
-        <div class="success-icon">
-            <div class="checkmark"></div>
-        </div>
-        
-        <h1>Thank You! 🚀</h1>
-        
-        <p>
-            Your message has been sent successfully! I really appreciate you reaching out and will get back to you as soon as possible.
-        </p>
-        
-        <a href="index.html" class="back-button" onclick="goBack()">
-            ← Back to Portfolio
-        </a>
-        
-        <div class="social-links">
-            <p>Connect with me on social media:</p>
-            <div class="social-icons">
-                <a href="#" class="social-icon linkedin" title="LinkedIn">in</a>
-                <a href="#" class="social-icon github" title="GitHub">Git</a>
-                <a href="#" class="social-icon twitter" title="Twitter">@</a>
-            </div>
-        </div>
+  <!-- Particle Background -->
+  <canvas class="particles"></canvas>
+
+  <div class="thank-you-container">
+    <div class="success-icon">
+      <svg viewBox="0 0 24 24">
+        <path d="M20.285,6.709c-0.391-0.391-1.023-0.391-1.414,0L9,16.58l-3.871-3.87c-0.391-0.391-1.023-0.391-1.414,0
+        c-0.391,0.391-0.391,1.023,0,1.414l4.578,4.578c0.391,0.391,1.023,0.391,1.414,0l10.578-10.578
+        C20.676,7.732,20.676,7.1,20.285,6.709z"/>
+      </svg>
     </div>
 
-    <script>
-        function goBack() {
-            // Try to go back to the previous page
-            if (document.referrer) {
-                window.history.back();
-            } else {
-                // Fallback: redirect to your portfolio homepage
-                window.location.href = '/'; // Change this to your portfolio URL
-            }
-        }
+    <h1>Thank You! 🚀</h1>
+    <p>Your message has been sent successfully. I’ll get back to you as soon as possible!</p>
 
-        // Auto-redirect after 10 seconds (optional)
-        setTimeout(() => {
-            console.log('Auto-redirecting to portfolio...');
-            // Uncomment the line below if you want auto-redirect
-            goBack();
-        }, 10000);
-    </script>
+    <a href="index.html" class="back-button" onclick="goBack()">← Back to Portfolio</a>
+
+    <div class="social-icons">
+      <a href="https://linkedin.com/in/yourprofile" class="social-icon" title="LinkedIn">in</a>
+      <a href="https://github.com/yourusername" class="social-icon" title="GitHub">Git</a>
+      <a href="mailto:hfake9829@gmail.com" class="social-icon" title="Email">@</a>
+    </div>
+  </div>
+
+  <!-- 🎉 Confetti (Canvas Confetti) -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+  <script>
+    confetti({
+      particleCount: 150,
+      spread: 90,
+      origin: { y: 0.6 }
+    });
+  </script>
+
+  <!-- 🔴 Particle Background Script -->
+  <script>
+    const canvas = document.querySelector(".particles");
+    const ctx = canvas.getContext("2d");
+
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+
+    const particlesArray = [];
+    const colors = ["#667eea", "#764ba2", "#fff"];
+
+    class Particle {
+      constructor() {
+        this.x = Math.random() * canvas.width;
+        this.y = Math.random() * canvas.height;
+        this.radius = Math.random() * 2 + 1;
+        this.color = colors[Math.floor(Math.random() * colors.length)];
+        this.speedY = Math.random() * 0.5 + 0.2;
+      }
+
+      update() {
+        this.y += this.speedY;
+        if (this.y > canvas.height) {
+          this.y = 0;
+          this.x = Math.random() * canvas.width;
+        }
+      }
+
+      draw() {
+        ctx.beginPath();
+        ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+        ctx.fillStyle = this.color;
+        ctx.fill();
+      }
+    }
+
+    function initParticles() {
+      for (let i = 0; i < 80; i++) {
+        particlesArray.push(new Particle());
+      }
+    }
+
+    function animateParticles() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      particlesArray.forEach(p => {
+        p.update();
+        p.draw();
+      });
+      requestAnimationFrame(animateParticles);
+    }
+
+    initParticles();
+    animateParticles();
+  </script>
+
+  <!-- ⏱ Auto Redirect -->
+  <script>
+    function goBack() {
+      if (document.referrer) {
+        window.history.back();
+      } else {
+        window.location.href = "index.html";
+      }
+    }
+
+    setTimeout(() => {
+      goBack();
+    }, 10000);
+  </script>
 </body>
 </html>
