@@ -1102,6 +1102,32 @@ body {
   transform: translateY(-5px);
 }
 
+@keyframes tilt-scene {
+  0%   { transform: rotateY(0deg) rotateX(0deg); }
+  25%  { transform: rotateY(25deg) rotateX(-15deg); }
+  50%  { transform: rotateY(0deg) rotateX(0deg); }
+  75%  { transform: rotateY(-25deg) rotateX(15deg); }
+  100% { transform: rotateY(0deg) rotateX(0deg); }
+}
+
+/* This is where we animate the internal 3D scene */
+model-viewer.tilt-animation::part(scene) {
+  animation: tilt-scene 3s ease-in-out infinite;
+  transform-origin: center;
+}
+.tilt-animation {
+  animation: gentle-tilt 5s ease-in-out infinite;
+  transform-style: preserve-3d;
+}
+
+model-viewer#html3d::part(scene) {
+  transform: rotateY(90deg); /* This forces it to turn toward front */
+}
+
+model-viewer:hover {
+  animation-play-state: paused;
+}
+
 .skill-header {
   display: flex;
   justify-content: space-between;

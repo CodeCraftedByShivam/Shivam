@@ -16,6 +16,9 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+  <!-- model-viewer script -->
+<script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+
   <style>
     html {
       scroll-behavior: smooth;
@@ -401,15 +404,23 @@
     <h2 class="section-title">My Skillset</h2>
     <div class="skill-container">
 
-      <div class="skill-item">
-        <div class="skill-header">
-          <span><i class="fa-brands fa-html5"></i> HTML / CSS</span>
-          <span class="level">Expert</span>
-        </div>
-        <div class="progress-bar">
-          <div class="progress-fill" data-width="95%"></div>
-        </div>
-      </div>
+<div class="skill-item">
+  <div class="skill-header">
+    <div style="display: flex; align-items: center; gap: 10px;">
+<model-viewer id="html3d"
+              src="models/html5_logo.glb"
+              alt="HTML5 3D Logo"
+              disable-zoom
+              style="width: 40px; height: 40px;">
+</model-viewer>
+        <span>HTML / CSS</span>
+    </div>
+    <span class="level">Expert</span>
+  </div>
+  <div class="progress-bar">
+    <div class="progress-fill" data-width="95%"></div>
+  </div>
+</div>
 
       <div class="skill-item">
         <div class="skill-header">
@@ -627,7 +638,48 @@
   });
 </script>
 
+
   <script src="script.js"></script>
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const model = document.querySelector('#html3d');
+    if (!model) return;
+
+    // Set the camera to front view initially
+    model.cameraOrbit = "90deg 90deg 2m";
+
+    let angle = 0;
+    let animationActive = false;
+    let animationFrame;
+
+    function animateTilt() {
+      if (!animationActive) return;
+
+      angle += 0.03;
+      const y = Math.sin(angle) * 10; // horizontal tilt
+      const x = Math.cos(angle) * 5;  // vertical tilt
+
+      // 👇 this ensures tilt starts from front
+      model.cameraOrbit = `${90 + y}deg ${90 + x}deg 2m`;
+
+      animationFrame = requestAnimationFrame(animateTilt);
+    }
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          animationActive = true;
+          animateTilt();
+        } else {
+          animationActive = false;
+          cancelAnimationFrame(animationFrame);
+        }
+      });
+    }, { threshold: 0.5 });
+
+    observer.observe(model);
+  });
+</script>
 </body>
 
 </html>
