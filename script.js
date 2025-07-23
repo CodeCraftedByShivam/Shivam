@@ -19,7 +19,7 @@ const images = {
   isro: [
     "assets/Projects/isro1.jpg",
     "assets/Projects/isro2.jpg",
-    "assets/Projects/isro3.jpg",
+    // "assets/Projects/isro3.jpg",
     "assets/Projects/isro4.jpg",
     "assets/Projects/isro5.jpg",
     "assets/Projects/isro6.jpg",
