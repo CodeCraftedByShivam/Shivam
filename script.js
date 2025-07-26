@@ -14,12 +14,11 @@ navItems.forEach(link => {
 });
 
 
-// ✅ Project Image Gallery
+// Enhanced Project Image Gallery with smooth transitions
 const images = {
   isro: [
     "assets/Projects/isro1.jpg",
     "assets/Projects/isro2.jpg",
-    // "assets/Projects/isro3.jpg",
     "assets/Projects/isro4.jpg",
     "assets/Projects/isro5.jpg",
     "assets/Projects/isro6.jpg",
@@ -55,51 +54,90 @@ let currentIndex = {
   thermo: 0
 };
 
-// ✅ Open Gallery + Show 1st Image + Set Caption
+// Enhanced Gallery Functions
 function openGallery(id) {
-  document.getElementById(`gallery-${id}`).classList.add("active");
+  const modal = document.getElementById(`gallery-${id}`);
+  modal.classList.add("active");
+  document.body.style.overflow = 'hidden'; // Prevent background scrolling
+  
+  // Set initial image
   document.getElementById(`${id}-image`).src = images[id][0];
   currentIndex[id] = 0;
-
-  // Caption update on open
-  const captionEl = document.getElementById(`caption-${id}`);
-  if (captionEl) {
-    captionEl.textContent = `1 / ${images[id].length}`;
-  }
+  
+  // Update caption
+  updateCaption(id);
+  
+  // Add keyboard event listener
+  document.addEventListener('keydown', handleKeyPress);
 }
 
-// ✅ Close Gallery
 function closeGallery(id) {
-  document.getElementById(`gallery-${id}`).classList.remove("active");
+  const modal = document.getElementById(`gallery-${id}`);
+  modal.classList.remove("active");
+  document.body.style.overflow = 'auto'; // Restore scrolling
+  
+  // Remove keyboard event listener
+  document.removeEventListener('keydown', handleKeyPress);
 }
 
-// ✅ Change Image + Update Caption
 function changeImage(id, direction) {
-  currentIndex[id] =
-    (currentIndex[id] + direction + images[id].length) % images[id].length;
-  document.getElementById(`${id}-image`).src = images[id][currentIndex[id]];
+  // Add fade effect
+  const imgElement = document.getElementById(`${id}-image`);
+  imgElement.style.opacity = '0.5';
+  
+  setTimeout(() => {
+    currentIndex[id] = (currentIndex[id] + direction + images[id].length) % images[id].length;
+    imgElement.src = images[id][currentIndex[id]];
+    updateCaption(id);
+    imgElement.style.opacity = '1';
+  }, 150);
+}
 
-  // Caption update on slide
+function updateCaption(id) {
   const captionEl = document.getElementById(`caption-${id}`);
   if (captionEl) {
     captionEl.textContent = `${currentIndex[id] + 1} / ${images[id].length}`;
   }
 }
 
+// Keyboard navigation
+function handleKeyPress(event) {
+  const activeModal = document.querySelector('.gallery-modal.active');
+  if (!activeModal) return;
+  
+  const modalId = activeModal.id.replace('gallery-', '');
+  
+  switch(event.key) {
+    case 'ArrowLeft':
+      changeImage(modalId, -1);
+      break;
+    case 'ArrowRight':
+      changeImage(modalId, 1);
+      break;
+    case 'Escape':
+      closeGallery(modalId);
+      break;
+  }
+}
 
+// Close gallery when clicking backdrop
+document.addEventListener('click', function(event) {
+  if (event.target.classList.contains('gallery-backdrop')) {
+    const modal = event.target.closest('.gallery-modal');
+    if (modal) {
+      const modalId = modal.id.replace('gallery-', '');
+      closeGallery(modalId);
+    }
+  }
+});
 
-// ✅ GSAP ANIMATION IN ACHIEVEMENT SECTION
-// (Add this only if you have GSAP and achievements section)
-// gsap.registerPlugin(ScrollTrigger);
+// Preload images for better performance
+function preloadImages() {
+  Object.values(images).flat().forEach(src => {
+    const img = new Image();
+    img.src = src;
+  });
+}
 
-// gsap.from(".achievement-card", {
-//   scrollTrigger: {
-//     trigger: ".achievements-section",
-//     start: "top 80%",
-//     toggleActions: "play none none reverse",
-//   },
-//   opacity: 0,
-//   y: 50,
-//   duration: 1,
-//   stagger: 0.3
-// });
+// Initialize preloading when page loads
+document.addEventListener('DOMContentLoaded', preloadImages);
