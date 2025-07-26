@@ -1,0 +1,441 @@
+zz
+CSS /* Projects Section Styling */
+.projects-section h2 {
+  text-align: center;
+  margin-bottom: 40px;
+  font-size: 38px;
+  color: red;
+  text-shadow: 0px 0px 10px rgba(255, 0, 0, 0.4);
+}
+
+
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  justify-content: center;
+}
+
+
+.projects-section {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+
+/* Card Styling */
+.project-card {
+  background: #111;
+  border: 1px solid #222;
+  border-radius: 12px;
+  padding: 16px;
+  box-shadow: 0 4px 12px rgba(255, 0, 0, 0.15);
+  display: flex;
+  flex-direction: column;
+  transition: 0.3s ease;
+  height: 100%;
+  max-width: 320px;
+  margin: 0 auto;
+}
+
+
+.project-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 25px rgba(255, 0, 0, 0.3);
+}
+
+
+.project-img-wrapper {
+  position: relative;
+  transform: scale(1.02);
+  margin-bottom: 15px;
+}
+
+
+.project-img-wrapper img {
+  width: 100%;
+  height: 150px;
+  object-fit: scale-down;
+  border-radius: 10px;
+}
+
+
+.badge.success {
+  background: #00ff80;
+  color: #000;
+}
+
+
+.badge.award {
+  background: gold;
+  color: #000;
+}
+
+
+.badge.ongoing {
+  background: #ff4d4d;
+  color: white;
+}
+
+
+/* Text Styling */
+.project-card h3 {
+  font-size: 18px;
+  color: #fff;
+  margin-bottom: 6px;
+  line-height: 1.3;
+  font-weight: 500;
+}
+
+
+.project-card p {
+  font-size: 15px;
+  color: #ccc;
+  margin-bottom: 10px;
+  line-height: 1.5;
+}
+
+
+/* Buttons */
+.btn-group {
+  display: flex;
+  gap: 8px;
+  margin-top: auto;
+  flex-wrap: wrap;
+}
+
+
+.btn {
+  padding: 6px 12px;
+  font-size: 13px;
+  background: red;
+  color: white;
+  border-radius: 6px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: 0.3s ease;
+  cursor: pointer;
+}
+
+
+.btn.secondary {
+  background: #333;
+}
+
+
+.btn:hover {
+  background: darkred;
+}
+
+
+/* Gallery Modal */
+.gallery-modal {
+  display: none;
+  position: fixed;
+  z-index: 2000;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.95);
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 20px;
+}
+
+
+.gallery-modal.active {
+  display: flex;
+}
+
+
+.gallery-modal .close {
+  position: absolute;
+  top: 20px;
+  right: 40px;
+  font-size: 40px;
+  color: white;
+  cursor: pointer;
+  z-index: 2100;
+}
+
+
+.gallery-image {
+  max-width: 90%;
+  max-height: 70%;
+  border: 4px solid red;
+  border-radius: 10px;
+  box-shadow: 0 0 20px red;
+  animation: fadeIn 0.6s ease;
+}
+
+
+.gallery-controls {
+  margin-top: 20px;
+  z-index: 2100;
+}
+
+
+.gallery-controls button {
+  font-size: 25px;
+  background: red;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  margin: 0 20px;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: background 0.3s ease;
+}
+
+
+.gallery-controls button:hover {
+  background: darkred;
+}
+
+
+.btn:hover {
+  background: linear-gradient(90deg, red, darkred);
+  box-shadow: 0 0 8px red;
+}
+
+
+/* FIXED MOBILE STYLES */
+@media (max-width: 768px) {
+  body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    width: 100%;
+  }
+
+
+  .projects-section {
+    width: 100%;
+    max-width: 100vw;
+    margin: 0;
+    padding: 0 10px;
+    box-sizing: border-box;
+    overflow-x: hidden;
+    background: #000;
+    /* optional for debug */
+  }
+
+
+  .project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    justify-content: center;
+
+
+    /* display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0;
+    box-sizing: border-box; */
+  }
+
+
+  .project-card {
+    width: 100%;
+    max-width: 95%;
+    padding: 20px;
+    box-sizing: border-box;
+    margin: 0 auto;
+    background: #111;
+  }
+
+
+  .project-img-wrapper img {
+    width: 100%;
+    height: 200px;
+    object-fit: contain;
+    border-radius: 16px;
+  }
+
+
+  .btn-group {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+
+  .btn {
+    width: 100%;
+    text-align: center;
+  }
+
+
+  /* .projects-section {
+    border: 2px solid red;
+    /* debug purpose only */
+  /* } */
+
+
+}
+
+
+/* Tablets: 768px to 1024px */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .project-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+  }
+
+
+  .project-card h3 {
+    font-size: 20px;
+  }
+
+
+  .project-card p {
+    font-size: 15px;
+  }
+
+
+  .btn {
+    font-size: 14px;
+  }
+}
+
+
+/* @media (max-width: 600px) {
+  .gallery-modal {
+    padding: 10px;
+  }
+
+
+  .gallery-controls {
+    flex-direction: row;
+    gap: 10px;
+  }
+
+
+  .gallery-controls button {
+    padding: 6px 12px;
+    font-size: 18px;
+  } */
+/* } */
+
+
+.image-caption {
+  color: white;
+  margin-top: 10px;
+  font-size: 16px;
+  font-style: italic;
+}
+
+
+.quote {
+  margin-top: 20px;
+  font-style: italic;
+  color: grey;
+  animation: fadeInUp 1.6s ease;
+}
+
+
+.social-icons {
+  margin-top: 25px;
+}
+
+
+.social-icons a {
+  font-size: 22px;
+  color: white;
+  margin-right: 20px;
+  transition: color 0.3s ease-in-out;
+}
+
+
+.social-icons a:hover {
+  color: red;
+  text-shadow: 0px 0px 5px red;
+}
+
+JS 
+// ✅ Project Image Gallery
+const images = {
+  isro: [
+    "assets/Projects/isro1.jpg",
+    "assets/Projects/isro2.jpg",
+    // "assets/Projects/isro3.jpg",
+    "assets/Projects/isro4.jpg",
+    "assets/Projects/isro5.jpg",
+    "assets/Projects/isro6.jpg",
+    "assets/Projects/isro7.jpg",
+    "assets/Projects/isro8.jpg",
+    "assets/Projects/isro9.jpg",
+  ],
+  robotic: [
+    "assets/Projects/robot1.jpg",
+    "assets/Projects/Robot2.jpg",
+    "assets/Projects/Robot4.jpg",
+    "assets/Projects/Robot5.jpg"
+  ],
+  frontend: [
+    "assets/Projects/Front1.png",
+    "assets/Projects/Front2.png",
+    "assets/Projects/Front3.png",
+    "assets/Projects/Front4.png",
+    "assets/Projects/Front 5.png",
+    "assets/Projects/Front6.png"
+  ],
+  thermo: [
+    "assets/Projects/Digi1.jpg",
+    "assets/Projects/Digi2.jpg",
+    "assets/Projects/Digi3.jpg"
+  ]
+};
+
+
+let currentIndex = {
+  isro: 0,
+  robotic: 0,
+  frontend: 0,
+  thermo: 0
+};
+
+
+// ✅ Open Gallery + Show 1st Image + Set Caption
+function openGallery(id) {
+  document.getElementById(`gallery-${id}`).classList.add("active");
+  document.getElementById(`${id}-image`).src = images[id][0];
+  currentIndex[id] = 0;
+
+
+  // Caption update on open
+  const captionEl = document.getElementById(`caption-${id}`);
+  if (captionEl) {
+    captionEl.textContent = `1 / ${images[id].length}`;
+  }
+}
+
+
+// ✅ Close Gallery
+function closeGallery(id) {
+  document.getElementById(`gallery-${id}`).classList.remove("active");
+}
+
+
+// ✅ Change Image + Update Caption
+function changeImage(id, direction) {
+  currentIndex[id] =zzzzzzzz
+    (currentIndex[id] + direction + images[id].length) % images[id].length;
+  document.getElementById(`${id}-image`).src = images[id][currentIndex[id]];
+
+
+  // Caption update on slide
+  const captionEl = document.getElementById(`caption-${id}`);
+  if (captionEl) {
+    captionEl.textContent = `${currentIndex[id] + 1} / ${images[id].length}`;
+  }
+}
+
+NOW I HAVE PROVIDED YOU ALL I WANT EVRY THING PROFESNOL AND BEST IN THE WORLD USED WHAT YOU WANT USED EVERY TECHNOLOGY YOU WANT MAKE SURE I WANT MY WEBSITE BEST IN WORLD

@@ -135,173 +135,95 @@
     </div>
   </section>
  -->
-  <!-- Projects Section -->
-  <section id="projects" class="section projects-section" data-aos="fade-up">
-    <div class="matrix-bg-projects"></div>
-    <div class="container">
-      <div class="section-header">
-        <h2 class="section-title">Projects Portfolio</h2>
-        <div class="title-underline"></div>
-        <p class="section-subtitle">Innovative solutions built with cutting-edge technology and precision engineering
-        </p>
-      </div>
-
-      <div class="project-grid">
-        <!-- ISRO Drone Project -->
+<section id="projects" class="section projects-section" data-aos="fade-up">
+    <h2>Projects</h2>
+    <div class="project-grid">
         <div class="project-card" data-aos="zoom-in-up" data-aos-delay="100">
-          <div class="project-img-wrapper">
-            <img src="assets/Projects/isro2.jpg" alt="ISRO Drone Project" />
-          </div>
-          <div class="project-content">
-            <h3 class="project-title">Autonomous Drone – ISRO Robotics Challenge 2024</h3>
-            <p class="project-description">Developed an autonomous drone for GPS-denied environments using Pixhawk &
-              Raspberry Pi. Successfully selected in qualification round by ISRO scientists.</p>
-
-            <div class="btn-group">
-              <button class="btn primary" onclick="openGallery('isro')">
-                <span class="btn-icon">📸</span>
-                View Photo </button>
+            <div class="project-img-wrapper">
+                <img src="assets/Projects/isro2.jpg" alt="ISRO Drone Project" />
             </div>
-          </div>
+            <h3>Autonomous Drone – ISRO Robotics Challenge 2024</h3>
+            <p>Developed an autonomous drone for GPS-denied environments using Pixhawk & Raspberry Pi. Selected in qualification round by ISRO.</p>
+            <div class="btn-group">
+                <button class="btn secondary" onclick="openGallery('isro')">View Photos</button>
+            </div>
         </div>
 
-        <!-- Robotic Arm Project -->
         <div class="project-card" data-aos="zoom-in-up" data-aos-delay="200">
-          <div class="project-img-wrapper">
-            <img src="assets/Projects/Robot6.jpg" alt="Robotic Arm Project" />
-          </div>
-          <div class="project-content">
-            <h3 class="project-title">Robotic Arm – Web Controlled using ESP32</h3>
-            <p class="project-description">Built a robotic arm with 4-DOF and recording-playback functionality via
-              intuitive web interface. Secured 2nd Prize in college-level robotics competition.</p>
-
-            <div class="btn-group">
-              <button class="btn primary" onclick="openGallery('robotic')">
-                <span class="btn-icon">📸</span>
-                View Photo </button>
-              <a href="assets/Projects/Robot2.jpg" target="_blank" class="btn secondary">
-                <span class="btn-icon">🏆</span>
-                Certificate
-              </a>
+            <div class="project-img-wrapper">
+                <img src="assets/Projects/Robot6.jpg" alt="Robotic Arm Project" />
             </div>
-          </div>
+            <h3>Robotic Arm – Web Controlled using ESP32</h3>
+            <p>Built a robotic arm with 4-DOF and recording-playback via a web interface. Secured 2nd Prize in college-level robotics competition.</p>
+            <div class="btn-group">
+                <button class="btn secondary" onclick="openGallery('robotic')">View Photos</button>
+                <a href="assets/Projects/Robot2.jpg" target="_blank" class="btn">View Certificate</a>
+            </div>
         </div>
 
-        <!-- Frontend Projects -->
         <div class="project-card" data-aos="zoom-in-up" data-aos-delay="300">
-          <div class="project-img-wrapper">
-            <img src="assets/Projects/Front1.png" alt="Frontend Website" />
-          </div>
-          <div class="project-content">
-            <h3 class="project-title">Multiple Frontend Projects</h3>
-            <p class="project-description">Created and deployed multiple frontend websites using modern technologies.
-              Includes professional portfolios, product pages, and interactive web applications.</p>
-
-            <div class="btn-group">
-              <button class="btn primary" onclick="openGallery('frontend')">
-                <span class="btn-icon">📸</span>
-                View Photo </button>
+            <div class="project-img-wrapper">
+                <img src="assets/Projects/Front1.png" alt="Frontend Website" />
             </div>
-          </div>
+            <h3>Multiple Frontend Projects</h3>
+            <p>Created and deployed frontend websites using HTML, CSS, JavaScript, React.js. Includes portfolios and product pages.</p>
+            <div class="btn-group">
+                <button class="btn secondary" onclick="openGallery('frontend')">View Photos</button>
+            </div>
         </div>
 
-        <!-- Digital Thermometer -->
         <div class="project-card" data-aos="zoom-in-up" data-aos-delay="400">
-          <div class="project-img-wrapper">
-            <img src="assets/Projects/Digi2.jpg" alt="Digital Thermometer" />
-          </div>
-          <div class="project-content">
-            <h3 class="project-title">Digital Thermometer – Mini Project</h3>
-            <p class="project-description">Arduino-based precision temperature monitoring system with LCD display and
-              real-time data logging capabilities for accurate environmental monitoring.</p>
-
-            <div class="btn-group">
-              <button class="btn primary" onclick="openGallery('thermo')">
-                <span class="btn-icon">📸</span>
-                View Photo </button>
+            <div class="project-img-wrapper">
+                <img src="assets/Projects/Digi2.jpg" alt="Digital Thermometer" />
             </div>
-          </div>
+            <h3>Digital Thermometer – Mini Project</h3>
+            <p>Arduino-based mini project for real-time temperature monitoring with LCD display.</p>
+            <div class="btn-group">
+                <button class="btn secondary" onclick="openGallery('thermo')">View Photos</button>
+            </div>
         </div>
-      </div>
     </div>
-  </section>
+</section>
 
-  <!-- Enhanced Gallery Modals (Keep the same gallery code from before) -->
-  <!-- ISRO Gallery -->
-  <div id="gallery-isro" class="gallery-modal">
-    <div class="gallery-backdrop"></div>
-    <div class="gallery-container">
-      <span class="gallery-close" onclick="closeGallery('isro')">&times;</span>
-      <div class="gallery-header">
-        <h3>ISRO Drone Project Gallery</h3>
-        <p class="image-caption" id="caption-isro">1 / 9</p>
-      </div>
-      <div class="gallery-main">
-        <img class="gallery-image" id="isro-image" src="assets/Projects/isro2.jpg" alt="ISRO Project" />
-      </div>
-      <div class="gallery-controls">
-        <button class="gallery-btn prev" onclick="changeImage('isro', -1)">‹</button>
-        <button class="gallery-btn next" onclick="changeImage('isro', 1)">›</button>
-      </div>
+<div id="gallery-isro" class="gallery-modal">
+    <span class="close" onclick="closeGallery('isro')">&times;</span>
+    <img class="gallery-image" id="isro-image" src="assets/Projects/isro2.jpg" />
+    <p class="image-caption" id="caption-isro">1 / 9</p>
+    <div class="gallery-controls">
+        <button onclick="changeImage('isro', -1)">⟨</button>
+        <button onclick="changeImage('isro', 1)">⟩</button>
     </div>
-  </div>
+</div>
 
-  <!-- Robotic Arm Gallery -->
-  <div id="gallery-robotic" class="gallery-modal">
-    <div class="gallery-backdrop"></div>
-    <div class="gallery-container">
-      <span class="gallery-close" onclick="closeGallery('robotic')">&times;</span>
-      <div class="gallery-header">
-        <h3>Robotic Arm Project Gallery</h3>
-        <p class="image-caption" id="caption-robotic">1 / 4</p>
-      </div>
-      <div class="gallery-main">
-        <img class="gallery-image" id="robotic-image" src="assets/Projects/Robot6.jpg" alt="Robotic Arm" />
-      </div>
-      <div class="gallery-controls">
-        <button class="gallery-btn prev" onclick="changeImage('robotic', -1)">‹</button>
-        <button class="gallery-btn next" onclick="changeImage('robotic', 1)">›</button>
-      </div>
+<div id="gallery-robotic" class="gallery-modal">
+    <span class="close" onclick="closeGallery('robotic')">&times;</span>
+    <img class="gallery-image" id="robotic-image" src="assets/Projects/Robot6.jpg" />
+    <p class="image-caption" id="caption-robotic">1 / 4</p>
+    <div class="gallery-controls">
+        <button onclick="changeImage('robotic', -1)">⟨</button>
+        <button onclick="changeImage('robotic', 1)">⟩</button>
     </div>
-  </div>
+</div>
 
-  <!-- Frontend Gallery -->
-  <div id="gallery-frontend" class="gallery-modal">
-    <div class="gallery-backdrop"></div>
-    <div class="gallery-container">
-      <span class="gallery-close" onclick="closeGallery('frontend')">&times;</span>
-      <div class="gallery-header">
-        <h3>Frontend Projects Gallery</h3>
-        <p class="image-caption" id="caption-frontend">1 / 6</p>
-      </div>
-      <div class="gallery-main">
-        <img class="gallery-image" id="frontend-image" src="assets/Projects/Front1.png" alt="Frontend Project" />
-      </div>
-      <div class="gallery-controls">
-        <button class="gallery-btn prev" onclick="changeImage('frontend', -1)">‹</button>
-        <button class="gallery-btn next" onclick="changeImage('frontend', 1)">›</button>
-      </div>
+<div id="gallery-frontend" class="gallery-modal">
+    <span class="close" onclick="closeGallery('frontend')">&times;</span>
+    <img class="gallery-image" id="frontend-image" src="assets/Projects/Front1.png" />
+    <p class="image-caption" id="caption-frontend">1 / 6</p>
+    <div class="gallery-controls">
+        <button onclick="changeImage('frontend', -1)">⟨</button>
+        <button onclick="changeImage('frontend', 1)">⟩</button>
     </div>
-  </div>
+</div>
 
-  <!-- Digital Thermometer Gallery -->
-  <div id="gallery-thermo" class="gallery-modal">
-    <div class="gallery-backdrop"></div>
-    <div class="gallery-container">
-      <span class="gallery-close" onclick="closeGallery('thermo')">&times;</span>
-      <div class="gallery-header">
-        <h3>Digital Thermometer Gallery</h3>
-        <p class="image-caption" id="caption-thermo">1 / 3</p>
-      </div>
-      <div class="gallery-main">
-        <img class="gallery-image" id="thermo-image" src="assets/Projects/Digi2.jpg" alt="Digital Thermometer" />
-      </div>
-      <div class="gallery-controls">
-        <button class="gallery-btn prev" onclick="changeImage('thermo', -1)">‹</button>
-        <button class="gallery-btn next" onclick="changeImage('thermo', 1)">›</button>
-      </div>
+<div id="gallery-thermo" class="gallery-modal">
+    <span class="close" onclick="closeGallery('thermo')">&times;</span>
+    <img class="gallery-image" id="thermo-image" src="assets/Projects/Digi2.jpg" />
+    <p class="image-caption" id="caption-thermo">1 / 3</p>
+    <div class="gallery-controls">
+        <button onclick="changeImage('thermo', -1)">⟨</button>
+        <button onclick="changeImage('thermo', 1)">⟩</button>
     </div>
-  </div>
+</div>
   <!-- Silent Defender -->
   <!-- <div class="project-card" data-aos="zoom-in-up" data-aos-delay="300">
     <div class="project-img-wrapper">
